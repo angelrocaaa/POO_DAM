@@ -7,7 +7,7 @@ public class PacienteApp {
 
         System.out.println(angel.getDni());
 
-        Paciente jacobo = new Paciente("Jacobo",20,'H',450,120);
+        Paciente jacobo = new Paciente("Jacobo",20,'H',70,180);
 
         System.out.println(jacobo.calcularIMC());
 

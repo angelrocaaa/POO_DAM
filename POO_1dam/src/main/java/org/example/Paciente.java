@@ -95,7 +95,10 @@ public class Paciente {
     }
 
     public int calcularIMC() {
-        double resultado = peso / Math.pow(altura,2);
+
+        double altura_total = (double) altura / 100;
+
+        double resultado = peso / Math.pow(altura_total,2);
 
         if (resultado < 20) {
             return INFRAPESO;
