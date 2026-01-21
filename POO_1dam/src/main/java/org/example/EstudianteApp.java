@@ -13,5 +13,14 @@ public class EstudianteApp {
 
         System.out.println(denis.getNIA());
         System.out.println(denis);
+
+        Estudiante joaquin = new Estudiante("joaquin");
+
+        System.out.println("Hay " + Estudiante.obtenerTotalEstudiantes() + " estudiantes.");
+
+        System.out.println(Estudiante.validarCorreo("angel@mutxamel.com"));
+        System.out.println(Estudiante.validarCorreo("angel@alu.edu.gva.es"));
+
+
     }
 }
