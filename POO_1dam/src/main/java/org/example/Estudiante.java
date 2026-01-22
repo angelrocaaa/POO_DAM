@@ -9,12 +9,14 @@ public class Estudiante {
     private String curso;
     private int NIA;
     private String email;
+    private Libro libro;
 
     public Estudiante (String nombre, String curso, String email) {
         this.nombre = nombre;
         this.curso = curso;
         this.email = email;
         setNIA();
+        libro = null;
     }
 
     public Estudiante (String nombre) {
@@ -31,6 +33,14 @@ public class Estudiante {
         } else {
             return false;
         }
+    }
+
+    public Libro getLibro() {
+        return libro;
+    }
+
+    public void setLibro(Libro libro) {
+        this.libro = libro;
     }
 
     public int getNIA() {
@@ -72,6 +82,7 @@ public class Estudiante {
                 ", curso='" + curso + '\'' +
                 ", NIA=" + NIA +
                 ", email='" + email + '\'' +
+                ", libro='" + libro + '\'' +
                 '}';
     }
 
