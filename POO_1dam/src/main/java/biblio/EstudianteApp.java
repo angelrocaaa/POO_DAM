@@ -26,7 +26,9 @@ public class EstudianteApp {
         System.out.println(divina_comedia);
 
         /// ////////////////////
-        divina_comedia.prestar(angel);
+        Prestamo p1 = divina_comedia.prestar(angel);
+
+        System.out.println("Fecha prestamo: " + p1.getFecha());
 
         System.out.println(angel);
 
