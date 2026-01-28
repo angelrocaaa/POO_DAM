@@ -1,5 +1,7 @@
 package biblio;
 
+import java.util.ArrayList;
+
 public class Estudiante {
 
     private static final String CORREO_FORMAT = "^[A-Za-z0-9+_.-]+@alu.edu.gva.es$";
@@ -9,14 +11,14 @@ public class Estudiante {
     private String curso;
     private int NIA;
     private String email;
-    private Libro libro;
+    private ArrayList<Libro> listaLibros;
 
     public Estudiante (String nombre, String curso, String email) {
         this.nombre = nombre;
         this.curso = curso;
         this.email = email;
         setNIA();
-        libro = null;
+        listaLibros = new ArrayList<>();
     }
 
     public Estudiante (String nombre) {
@@ -35,12 +37,16 @@ public class Estudiante {
         }
     }
 
-    public Libro getLibro() {
-        return libro;
+    public void insertarLibro (Libro libro) {
+        listaLibros.add(libro);
     }
 
-    public void setLibro(Libro libro) {
-        this.libro = libro;
+    public void borrarLibro (Libro libro) {
+        listaLibros.remove(libro);
+    }
+
+    public ArrayList<Libro> getListaLibrosLibros() {
+        return listaLibros;
     }
 
     public int getNIA() {
@@ -82,6 +88,7 @@ public class Estudiante {
                 ", curso='" + curso + '\'' +
                 ", NIA=" + NIA +
                 ", email='" + email + '\'' +
+                //", libros='" + listaLibros + '\'' +
                 '}';
     }
 

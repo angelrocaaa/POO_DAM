@@ -30,7 +30,7 @@ public class EstudianteApp {
 
         System.out.println("Fecha prestamo: " + p1.getFecha());
 
-        System.out.println(angel);
+        System.out.println(angel.getListaLibrosLibros());
 
         System.out.println(divina_comedia.estaDisponible());
 
@@ -42,7 +42,7 @@ public class EstudianteApp {
         divina_comedia.devolver();
         divina_comedia.devolver();
 
-        System.out.println(angel);
+        System.out.println(angel.getListaLibrosLibros());
 
         System.out.println(divina_comedia.estaDisponible());
 

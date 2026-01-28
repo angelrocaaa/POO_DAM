@@ -1,20 +1,34 @@
 package biblio;
 
+import java.util.ArrayList;
+
 public class Editorial {
 
     private String nombre;
     private String pais;
+    private ArrayList<Libro> listaLibrosEditoriales;
 
     public Editorial (String nombre, String pais) {
         this.nombre = nombre;
         this.pais = pais;
+        listaLibrosEditoriales = new ArrayList<>();
     }
 
     public Editorial () {
 
     }
 
+    public void insertarLibro (Libro libro) {
+        listaLibrosEditoriales.add(libro);
+    }
 
+    public void borrarLibro (Libro libro) {
+        listaLibrosEditoriales.remove(libro);
+    }
+
+    public ArrayList<Libro> getListaLibrosEditoriales() {
+        return listaLibrosEditoriales;
+    }
 
     public String getPais() {
         return pais;
@@ -37,6 +51,7 @@ public class Editorial {
         return "Editorial{" +
                 "nombre='" + nombre + '\'' +
                 ", pais='" + pais + '\'' +
+                ", libro='" + listaLibrosEditoriales + '\'' +
                 '}';
     }
 
