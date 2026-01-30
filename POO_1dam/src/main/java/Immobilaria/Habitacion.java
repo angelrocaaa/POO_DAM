@@ -58,6 +58,8 @@ public class Habitacion {
         this.listaElectrodomesticos = listaElectrodomesticos;
     }
 
+
+
     @Override
     public String toString() {
         return "Habitacion{" +
