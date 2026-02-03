@@ -17,7 +17,7 @@ public class Partido {
 
     public void insertarSET(int puntosJ1, int puntosJ2) {
 
-        
+
     }
 
     public Jugador getJugador2() {
