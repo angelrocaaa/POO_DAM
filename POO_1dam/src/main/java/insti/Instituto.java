@@ -17,11 +17,8 @@ public class Instituto {
     @NonNull
     private ArrayList<Curso> listaCursos;
 
-    public Instituto (String nombre) {
-        this.nombre = nombre;
-    }
 
-    public Instituto (String nombre,String poblacion, ArrayList<Estudiante> listaEstudiantes, ArrayList<Curso> listaCursos) {
+    public Instituto (String nombre) {
         this.nombre = nombre;
         this.poblacion = poblacion;
         listaEstudiantes = new ArrayList<>();
@@ -32,8 +29,25 @@ public class Instituto {
         this.nombre = Objects.requireNonNullElse(nombre,"Instituto sin nombre");
     }
 
-    public void agregarCurso() {
+    public void agregarCurso(Curso curso){
 
+        if (!listaCursos.contains(curso)){
+            listaCursos.add(curso);
+        } else {
+            System.out.println("No puedes añadir un curso existente");
+        }
     }
 
+    public void agregarEstudiante(Estudiante estudiante){
+
+        if (!listaEstudiantes.contains(estudiante)){
+            listaEstudiantes.add(estudiante);
+        } else {
+            System.out.println("No puedes añadir un estudiante existente");
+        }
+    }
+
+    public ArrayList<Curso> getListaCursos() {
+        return listaCursos;
+    }
 }
