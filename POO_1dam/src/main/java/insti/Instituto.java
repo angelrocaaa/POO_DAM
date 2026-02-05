@@ -33,7 +33,7 @@ public class Instituto {
     }
 
     public void agregarCurso() {
-        
+
     }
 
 }
