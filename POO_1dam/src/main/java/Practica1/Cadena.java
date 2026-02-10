@@ -3,12 +3,26 @@ package Practica1;
 import java.util.ArrayList;
 
 public class Cadena {
-
     private String nombre;
     private ArrayList<Programa> listaProgramas;
 
-    public Cadena (String nombre) {
+    public Cadena(String nombre){
         this.nombre = nombre;
+        listaProgramas = new ArrayList<>();
+    }
+
+    public void anyadirPrograma(Programa programa){
+        listaProgramas.add(programa);
+    }
+
+    public void borrarPrograma(Programa programa){
+        listaProgramas.remove(programa);
+    }
+
+    public void mostrarListaProgramas (){
+        for (Programa programa : listaProgramas){
+            System.out.println("- "+programa);
+        }
     }
 
     public String getNombre() {
@@ -31,9 +45,7 @@ public class Cadena {
     public String toString() {
         return "Cadena{" +
                 "nombre='" + nombre + '\'' +
-                ", listaProgramas=" + listaProgramas +
+                "Lista Programas" + listaProgramas+
                 '}';
     }
-
-
 }
