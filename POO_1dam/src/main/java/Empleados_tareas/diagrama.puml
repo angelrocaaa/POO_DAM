@@ -1,0 +1,26 @@
+@startuml
+
+package Empleados_tareas {
+
+    class Empleados {
+        +realizarTarea() : void
+    }
+
+    class Gerente {
+        +realizarTarea() : void
+    }
+
+    class Disenyador {
+        +realizarTarea() : void
+    }
+
+    class Desarollador {
+        +realizarTarea() : void
+    }
+
+    Empleados <|-- Gerente
+    Empleados <|-- Disenyador
+    Empleados <|-- Desarollador
+}
+
+@enduml
