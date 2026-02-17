@@ -1,0 +1,73 @@
+@startuml
+package "Sistema_de_pagos" {
+
+    '-------------------------
+    ' Clase abstracta MetodoPago
+    '-------------------------
+    abstract class MetodoPago {
+        + procesarPago(importe: double)
+    }
+
+    '-------------------------
+    ' Clase Bizum
+    '-------------------------
+    class Bizum {
+        - static final LONGITUD_PIN : int
+        - static final FORMATO_NUMERO : String
+        - final TAMANYO_TELEFONO : int
+
+        - telefono : String
+        - pin : int
+
+        + validarBizum() : boolean
+        + procesarPago(importe: double) : void
+    }
+
+    '-------------------------
+    ' Clase Paypal
+    '-------------------------
+    class Paypal {
+        - static final CORREO_FORMAT : String
+
+        - cuenta : String
+        - saldo : double
+
+        + validarPaypal() : boolean
+        + validarSaldo(importe: double) : boolean
+        + procesarPago(importe: double) : void
+    }
+
+    '-------------------------
+    ' Clase TarjetaCredito
+    '-------------------------
+    class TarjetaCredito {
+        - final LONGITUD_ESPERADA : int
+
+        - nro_tarjeta : String
+        - tipo : String
+
+        + validarTarjeta() : boolean
+        + procesarPago(importe: double) : void
+    }
+
+    '-------------------------
+    ' Clase Tienda
+    '-------------------------
+    class Tienda {
+        + realizarPago(metodo: MetodoPago) : double
+        + iniciarPago() : void
+    }
+
+    '-------------------------
+    ' Relaciones
+    '-------------------------
+    MetodoPago <|-- Bizum
+    MetodoPago <|-- Paypal
+    MetodoPago <|-- TarjetaCredito
+
+    Tienda --> MetodoPago : usa
+    Tienda --> Bizum
+    Tienda --> Paypal
+    Tienda --> TarjetaCredito
+}
+@enduml

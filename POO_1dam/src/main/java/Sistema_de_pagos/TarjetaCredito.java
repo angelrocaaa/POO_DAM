@@ -42,10 +42,19 @@ public class TarjetaCredito extends MetodoPago{
         System.out.println("Procesando pago de " + importe + " €" + " con tarjeta de crédito " + tipo);
     }
 
+    /**
+     * @author dam1
+     * @version 1.0
+     * Este método comprueba que la longitud de la tarjeta sea el que dice la constante y el tipo dela tarjeta sea igual a una de las que le pasamos.
+     * @return true si la longitud y el tipo es valido y false si alguna de las dos validaciones no es valida
+     */
+
     public boolean validarTarjeta() {
         if (nro_tarjeta.length() == LONGITUD_ESPERADA && tipo.equals("VISA") || tipo.equals("MASTERCARD") || tipo.equals("MAESTRO")) {
+            System.out.println("La tarjeta de crédito es valida.");
             return true;
         } else {
+            System.out.println("La tarjeta de crédito no es valida.");
             return false;
         }
     }
