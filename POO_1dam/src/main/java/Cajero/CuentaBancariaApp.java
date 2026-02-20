@@ -24,7 +24,7 @@ public class CuentaBancariaApp {
 
         switch (opcion) {
             case "1":
-                
+
         }
     }
 }
